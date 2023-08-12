@@ -1,0 +1,15 @@
+body{
+    font-family: 'Press Start 2P', cursive;
+}
+
+h1 {
+    text-align: center;
+}
+
+.input-selection{
+    text-align: center;
+}
+.input-selection > input::placeholder {
+    font-size: 10px;
+    font-family: 'Press Start 2P', cursive;
+}

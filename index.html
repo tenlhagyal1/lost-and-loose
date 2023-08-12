@@ -1,11 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lost and loose</title>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
+
 <body>
-     
+    <div id="lost-astronaut-game">
+        <h1>The Lost Astronaut</h1>
+        <div id="word-display">
+        </div>
+        <!-- Display hint related to the word, nothing in hint as of now becasue a random word hasnt been generated -->
+        <div id="hint-box">
+            <p>Hint!: <span></span></p>
+        </div>
+        <!-- Section for player's input not the place where the random word will be (that will have _ _ _) -->
+        <div class="input-selection">
+            <input type="text" placeholder="Guess a letter" maxlength="1">
+            <button onclick="submitGuess()">Enter</button>
+        </div>
+        <!--displays the astronauts drawing parts of it-->
+        <div id="astronaut-display">
+        </div>
+        <!--the span is left empty because as the player gueeses wrong it will be added in there with a JS function-->
+        <div id="incorrect-guesses">
+            <p>Incorrect Guesses <span></span></p>
+        </div>
+        <!-- Display game outcome messages -->
+        <div class="game-message">
+        </div>
+    </div>
+
+
 </body>
+
 </html>
