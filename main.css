@@ -1,5 +1,14 @@
 body{
     font-family: 'Press Start 2P', cursive;
+    background-image: url("https://cdn.wallpapersafari.com/35/73/LUhwmg.gif");
+    background-size: cover;
+    color: lime;
+    position: relative;
+    display: flex;
+    flex-direction: column; 
+    height: 100vh; 
+    justify-content: space-between;
+    font-size: x-large;
 }
 
 h1 {
@@ -9,7 +18,47 @@ h1 {
 .input-selection{
     text-align: center;
 }
+
 .input-selection > input::placeholder {
     font-size: 10px;
     font-family: 'Press Start 2P', cursive;
 }
+
+#image-box {
+    text-align: center;
+    flex: 1; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    margin-top: 20vmin;
+}
+
+#game-image {
+    width:400px;
+}
+
+#word-and-controls {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    position: absolute;
+    bottom: 10%; 
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#word-display {
+    letter-spacing: 1em;
+    margin-right: 20px; 
+    padding: 10px;
+}
+
+#incorrect-guesses {
+        border: 3px solid gold;
+        width: 39vmax;
+        height: 10vh;   
+        float: left;   
+        margin-right: 20px;  
+        padding: 10px;
+}
+    

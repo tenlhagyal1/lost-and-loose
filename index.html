@@ -9,36 +9,33 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <script src="main.js"></script>
+    <script src="main.js" defer></script>
 </head>
 
 <body>
     <div id="lost-astronaut-game">
         <h1>The Lost Astronaut</h1>
-        <!-- Display hint related to the word, nothing in hint as of now becasue a random word hasnt been generated -->
         <div id="hint-box">
             <p>Hint!: <span></span></p>
         </div>
-        <!-- Section for player's input not the place where the random word will be (that will have _ _ _) -->
         <div class="input-selection">
-            <input type="text" placeholder="Guess a letter" maxlength="1">
-            <button>Enter</button>
+            Guess a letter! <input id="letter-guess" type="text" placeholder="?" maxlength="1" size="1">
+            <button id="enter-button">Enter</button>
         </div>
-        <!--displays the astronauts drawing parts of it-->
-        <div id="astronaut-display">
-        </div>
-        <!--the span is left empty because as the player gueeses wrong it will be added in there with a JS function-->
+        <div id="astronaut-display"></div>
         <div id="incorrect-guesses">
-            <p>Incorrect Guesses <span></span></p>
+            <p>Incorrect Guess: <span></span></p>
         </div>
-        <!-- Display game outcome messages -->
-        <div class="game-message">
+        <div class="game-message"></div>
+        <div id="word-and-controls">
+            <div id="word-display"></div>
+            <button id="restart-button">Restart</button>
         </div>
-        <div id="word-display">
+        <div id="image-box">
+            <img id="game-image" src="astronauts/astro-6.png" alt="Astronaut"/>
+            <span id="notification"></span>
         </div>
-        <button id="restart-btn">Restart</button>
     </div>
-
 
 </body>
 
