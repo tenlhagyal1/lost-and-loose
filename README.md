@@ -18,3 +18,4 @@ Get ready for a game set somewhere out in space! An astronaut is floating around
 - CSS
 
 # Getting Started
+https://lostandlose.netlify.app/

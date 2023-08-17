@@ -21,16 +21,14 @@ const wordsWithHints = [
     { word: 'Every', hint: 'Checks if every element in the array meets a certain condition' },
     { word: 'Classes', hint: 'Used to create objects' },
 ];
-
-// Length 7
 const imageList = [
-    "astronauts/astro-6.png", // index 0
-    "astronauts/astro-5.png", // index 1
-    "astronauts/astro-4.png", // index 2
-    "astronauts/astro-3.png", // index 3
-    "astronauts/astro-2.png", // index 4
-    "astronauts/astro-1.png", // index 5
-    "astronauts/astro-0.png", // index 6
+    "astronauts/astro-6.png",
+    "astronauts/astro-5.png", 
+    "astronauts/astro-4.png", 
+    "astronauts/astro-3.png", 
+    "astronauts/astro-2.png", 
+    "astronauts/astro-1.png", 
+    "astronauts/astro-0.png", 
 ]
 
 const MAX_INCORRECT_GUESSES = 6;
@@ -45,15 +43,12 @@ let randomWordLowerCase;
 /*----- cached elements  -----*/
 const notification = document.getElementById("notification");
 
-
 /*----- event listeners -----*/
-//the main function is called when the window is laoded
 window.onload = main;
 document.getElementById("enter-button").addEventListener("click", checkGuess);
 document.getElementById("restart-button").addEventListener("click", function () {
     location.reload();
 });
-//event listener for my enter key
 document.getElementById("letter-guess").addEventListener("keydown", function (e) {
     if (e.keyCode === 13) {
         checkGuess(e);
@@ -61,15 +56,11 @@ document.getElementById("letter-guess").addEventListener("keydown", function (e)
 });
 
 /*----- functions -----*/
-// Function to pick a random word and set the associated hint
 function pickRandomWordAndSetHint() {
     const randomIndex = Math.floor(Math.random() * wordsWithHints.length);
     const randomWordWithHint = wordsWithHints[randomIndex];
     randomWordOriginalCase = randomWordWithHint.word;
-    //this line changes the word to lowercase and assigns to randomWordLowerCase
     randomWordLowerCase = randomWordWithHint.word.toLowerCase();
-
-    // Sets the word display and hint
     document.getElementById('word-display').textContent = '_'.repeat(randomWordWithHint.word.length);
     document.querySelector('#hint-box span').textContent = randomWordWithHint.hint;
 }
@@ -77,30 +68,24 @@ function pickRandomWordAndSetHint() {
 function main() {
     pickRandomWordAndSetHint();
 }
-
-//declaring a function named 'checkGuess
 function checkGuess(e) {
     e.preventDefault();
     const letterInput = document.getElementById("letter-guess");
     const letter = document.getElementById("letter-guess").value.toLowerCase();
     notification.textContent = "";
-
     if (letter.length == 0 || !/^[a-z]$/.test(letter)) {
         notification.textContent = "You MUST enter a valid letter!";
         return;
     }
-
     if (incorrectGuessesList.includes(letter) || correctGuessesList.includes(letter)) {
         notification.textContent = "You have already tried this letter.";
         return;
     }
-
     if (randomWordLowerCase.includes(letter)) {
         successfulGuess(letter);
     } else {
         incorrectGuess(letter);
     }
-
     letterInput.value = "";
 }
 
@@ -117,7 +102,6 @@ function successfulGuess(letter) {
         }
     }
     document.getElementById('word-display').textContent = newTextContent;
-
     if (!newTextContent.includes('_')) {
         endGame(true);
     }
@@ -127,9 +111,7 @@ function incorrectGuess(letter) {
     incorrectGuessesList.push(letter);
     notification.textContent = "Incorrect guess : " + letter;
     let incorrectGuessesSpan = document.querySelector("#incorrect-guesses span");
-
-    // Update its content with the incorrectGuessesList
-    incorrectGuessesSpan.textContent = incorrectGuessesList.join(', '); // This will display the letters separated by commas
+    incorrectGuessesSpan.textContent = incorrectGuessesList.join(', '); 
     if (incorrectGuessesList.length >= MAX_INCORRECT_GUESSES) {
         endGame(false);
     }
