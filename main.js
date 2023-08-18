@@ -129,7 +129,5 @@ function endGame(isWinner) {
         notification.textContent = "Congratulations! You win!";
     } else {
         notification.textContent = "Game Over! The word was " + randomWordOriginalCase;
-        document.getElementById("letter-guess").disabled = true;
-        document.getElementById("enter-button").disabled = true;
     }
 }
