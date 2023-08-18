@@ -7,7 +7,7 @@ Get ready for a game set somewhere out in space! An astronaut is floating around
 ![Starting Screen](game-img/Initial-view.png)
 
 ### Ending Screen
-![Winning Screen](game-img/Winning-view.png)
+![Winning Screen](game-img/Winning-View.png)
 
 
 
